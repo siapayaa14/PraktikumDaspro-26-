@@ -10,17 +10,17 @@ public class StudiKasus226 {
         System.out.print("Jenis Kegiatan (BELMAWA, BAKORMA, Mandiri, PKM, atau Lainnya): ");
         String jenisKegiatan = sc.nextLine();
 
-        System.out.print("Jumlah dokumen: ");
-        int jumlahDokumen = sc.nextInt();
-
-        System.out.print("Peringkat juara: ");
-        int peringkatJuara = sc.nextInt();
-
-        int kurangDokumen = 4 - jumlahDokumen;
 
         if (jenisKegiatan.equalsIgnoreCase("BELMAWA") ||
             jenisKegiatan.equalsIgnoreCase("BAKORMA") ||
             jenisKegiatan.equalsIgnoreCase("MANDIRI")) {
+
+                System.out.print("Jumlah dokumen: ");
+                int jumlahDokumen = sc.nextInt();
+                
+                System.out.print("Peringkat juara: ");
+                int peringkatJuara = sc.nextInt();
+                int kurangDokumen = 4 - jumlahDokumen;
 
             if (peringkatJuara >= 1 && peringkatJuara <= 3) {
 
@@ -36,6 +36,9 @@ public class StudiKasus226 {
             }
 
         } else if (jenisKegiatan.equalsIgnoreCase("PKM")) {
+            System.out.print("Jumlah dokumen: ");
+            int jumlahDokumen = sc.nextInt();
+            int kurangDokumen = 4 - jumlahDokumen;
 
             System.out.print("Status pendanaan PKM (1 = lolos, 0 = tidak lolos): ");
             int statusPKM = sc.nextInt();
@@ -52,9 +55,11 @@ public class StudiKasus226 {
             } else {
                 System.out.println("Status : Tidak lolos pendanaan PKM. Dana penghargaan tidak diberikan.");
             }
+        } else if (jenisKegiatan.equalsIgnoreCase("Lainnya")) {
+                System.out.println("Status : Kegiatan di luar ketentuan tidak memperoleh dana penghargaan.");
 
         } else {
             System.out.println("Status : Kegiatan di luar ketentuan tidak memperoleh dana penghargaan.");
         }
-    }
+}
 }
